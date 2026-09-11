@@ -7,762 +7,522 @@
 <title>Kanuoo 🫶🏻</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    background: #fff7f8;
-    color: #4b3940;
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
+body{
+    background:#fff7f8;
+    color:#4b3940;
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
 }
 
-.page {
-    min-height: 100vh;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 35px 22px;
-    text-align: center;
-    animation: fadeIn 0.8s ease;
+.page{
+    min-height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:35px 22px;
+    text-align:center;
+    animation:fadeIn .8s ease;
 }
 
-.page.active {
-    display: flex;
+.page.active{
+    display:flex;
 }
 
-.content {
-    width: 100%;
-    max-width: 650px;
+.content{
+    width:100%;
+    max-width:650px;
 }
 
-h1, h2 {
-    font-family: 'Playfair Display', serif;
+h1,h2{
+    font-family:'Playfair Display',serif;
 }
 
-h1 {
-    font-size: clamp(40px, 9vw, 72px);
-    margin-bottom: 18px;
+h1{
+    font-size:clamp(40px,9vw,72px);
+    margin-bottom:18px;
 }
 
-h2 {
-    font-size: clamp(30px, 7vw, 48px);
-    margin-bottom: 20px;
+h2{
+    font-size:clamp(30px,7vw,48px);
+    margin-bottom:20px;
 }
 
-p {
-    line-height: 1.8;
-    font-size: 16px;
+p{
+    line-height:1.8;
+    font-size:16px;
 }
 
-.small {
-    font-size: 13px;
-    opacity: 0.65;
-    margin-bottom: 15px;
+.small{
+    font-size:13px;
+    opacity:.65;
+    margin-bottom:15px;
 }
 
-button {
-    border: none;
-    background: #4b3940;
-    color: white;
-    padding: 14px 25px;
-    border-radius: 30px;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 25px;
-    transition: 0.25s;
-    box-shadow: 0 8px 20px rgba(75,57,64,0.15);
+button{
+    border:none;
+    background:#4b3940;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:25px;
+    transition:.25s;
+    box-shadow:0 8px 20px rgba(75,57,64,.15);
 }
 
-button:hover {
-    transform: translateY(-3px) scale(1.03);
+button:hover{
+    transform:translateY(-3px) scale(1.03);
 }
 
-.heart {
-    font-size: 55px;
-    margin-bottom: 20px;
-    animation: float 2.5s infinite ease-in-out;
+.heart{
+    font-size:55px;
+    margin-bottom:20px;
+    animation:float 2.5s infinite ease-in-out;
 }
 
-.card {
-    background: rgba(255,255,255,0.85);
-    padding: 35px 28px;
-    border-radius: 28px;
-    box-shadow: 0 15px 45px rgba(80,50,60,0.09);
-    margin-top: 25px;
+.card{
+    background:rgba(255,255,255,.85);
+    padding:35px 28px;
+    border-radius:28px;
+    box-shadow:0 15px 45px rgba(80,50,60,.09);
+    margin-top:25px;
 }
 
-.highlight {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 22px;
-    margin: 25px 0;
+.highlight{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:22px;
+    margin:25px 0;
 }
 
-.big {
-    font-size: 24px;
-    font-weight: 600;
+.big{
+    font-size:24px;
+    font-weight:600;
 }
 
-.red {
-    font-weight: 600;
+.evidence{
+    font-size:12px;
+    opacity:.65;
+    margin-top:10px;
 }
 
-.sticker-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 30px;
+.line{
+    margin:18px 0;
 }
 
-.sticker {
-    min-height: 150px;
-    background: white;
-    border-radius: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    box-shadow: 0 8px 25px rgba(80,50,60,0.08);
-    transform: rotate(-2deg);
+.sticker-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:30px;
 }
 
-.sticker:nth-child(even) {
-    transform: rotate(2deg);
+.sticker{
+    min-height:150px;
+    background:white;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    box-shadow:0 8px 25px rgba(80,50,60,.08);
+    transform:rotate(-2deg);
 }
 
-.sticker img {
-    max-width: 100%;
-    max-height: 180px;
-    object-fit: contain;
+.sticker:nth-child(even){
+    transform:rotate(2deg);
 }
 
-.evidence {
-    font-size: 12px;
-    opacity: 0.65;
-    margin-top: 10px;
+.sticker img{
+    max-width:100%;
+    max-height:180px;
+    object-fit:contain;
 }
 
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 25px;
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:25px;
 }
 
-.photo {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(80,50,60,0.1);
+.photo{
+    background:white;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(80,50,60,.1);
 }
 
-.photo img {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
+.photo img{
+    width:100%;
+    display:block;
+    border-radius:4px;
 }
 
-.polaroid-text {
-    padding: 10px 3px 3px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+.polaroid-text{
+    padding:10px 3px 3px;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
 }
 
-.line {
-    margin: 18px 0;
+.final{
+    font-size:19px;
+    line-height:2;
 }
 
-.final {
-    font-size: 19px;
-    line-height: 2;
+.signature{
+    margin-top:35px;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:20px;
 }
 
-.signature {
-    margin-top: 35px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 20px;
+.confetti{
+    position:fixed;
+    width:9px;
+    height:9px;
+    top:-20px;
+    animation:fall 3s linear forwards;
+    z-index:100;
 }
 
-.confetti {
-    position: fixed;
-    width: 9px;
-    height: 9px;
-    top: -20px;
-    animation: fall 3s linear forwards;
-    z-index: 100;
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(15px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
-@keyframes fadeIn {
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
 
-    from {
-        opacity: 0;
-        transform: translateY(15px);
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 }
 
-@keyframes float {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
+@media(max-width:500px){
+    .page{padding:28px 17px}
+    .card{padding:28px 20px}
 }
-
-@keyframes fall {
-
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
-
-}
-
-@media(max-width:500px) {
-
-    .page {
-        padding: 28px 17px;
-    }
-
-    .card {
-        padding: 28px 20px;
-    }
-
-    .sticker-grid,
-    .photo-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
 </style>
 </head>
 
-
 <body>
 
-
 <!-- PAGE 1 -->
-
 <section class="page active" id="page1">
-
 <div class="content">
-
-    <div class="heart">🎀</div>
-
-    <p class="small">
-        pssst... you.
-    </p>
-
-    <h1>
-        I made you something.
-    </h1>
-
-    <p>
-        And before you ask — no,<br>
-        this is not normal behaviour.
-    </p>
-
-    <button onclick="nextPage(2)">
-        tap to open 🫵🏻
-    </button>
-
+<div class="heart">🎀</div>
+<p class="small">pssst... you.</p>
+<h1>I made you something.</h1>
+<p>And before you ask — no,<br>this is not normal behaviour.</p>
+<button onclick="nextPage(2)">tap to open 🫵🏻</button>
 </div>
-
 </section>
-
 
 <!-- PAGE 2 -->
-
 <section class="page" id="page2">
-
 <div class="content">
-
-    <div class="heart">💌</div>
-
-    <h2>
-        Before you proceed...
-    </h2>
-
-    <div class="card">
-
-        <p>
-            Please prepare yourself for an
-            unnecessary amount of feelings.
-        </p>
-
-        <p class="highlight">
-            There may also be emotional damage.
-        </p>
-
-        <button onclick="nextPage(3)">
-            I'm ready 😭
-        </button>
-
-    </div>
-
+<div class="heart">💌</div>
+<h2>Before you proceed...</h2>
+<div class="card">
+<p>Please prepare yourself for an unnecessary amount of feelings.</p>
+<p class="highlight">There may also be emotional damage.</p>
+<button onclick="nextPage(3)">I'm ready 😭</button>
 </div>
-
+</div>
 </section>
-
 
 <!-- PAGE 3 -->
-
 <section class="page" id="page3">
-
 <div class="content">
-
-    <div class="heart">❤️</div>
-
-    <h2>
-        I LOVE YOU.
-    </h2>
-
-    <div class="card">
-
-        <p class="big">
-            Like actually.
-        </p>
-
-        <p class="line">
-            Stupidly.<br>
-            Ridiculously.<br>
-            Probably more than is medically necessary.
-        </p>
-
-        <p>
-            And I know I say it, but sometimes
-            I don't think I say it enough.
-        </p>
-
-        <button onclick="nextPage(4)">
-            okay now the emotional part 🥹
-        </button>
-
-    </div>
-
+<div class="heart">❤️</div>
+<h2>I LOVE YOU.</h2>
+<div class="card">
+<p class="big">Like actually.</p>
+<p class="line">
+Stupidly.<br>
+Ridiculously.<br>
+Probably more than is medically necessary.
+</p>
+<p>And I know I say it, but sometimes I don't think I say it enough.</p>
+<button onclick="nextPage(4)">okay now the emotional part 🥹</button>
 </div>
-
+</div>
 </section>
-
 
 <!-- PAGE 4 -->
-
 <section class="page" id="page4">
-
 <div class="content">
+<div class="heart">🥹</div>
+<h2>Thank you.</h2>
+<div class="card">
+<p>You could've just helped me a little and left it at that.</p>
 
-    <div class="heart">🥹</div>
+<p class="highlight">
+But you actually sat there for HOURS and made the whole thing for me.
+</p>
 
-    <h2>
-        Thank you.
-    </h2>
+<p>
+You put so much time and effort into something that was literally for me,
+and that means more to me than I can explain.
+</p>
 
-    <div class="card">
+<p class="line">
+You absolutely did not have to do it.<br>
+But you did.
+</p>
 
-        <p>
-            You could've just helped me a little
-            and left it at that.
-        </p>
+<p>And I hope you know how much I appreciate that.</p>
 
-        <p class="highlight">
-            But you actually sat there for HOURS
-            and made the whole thing for me.
-        </p>
-
-        <p>
-            You put so much time and effort into
-            something that was literally for me,
-            and that means more to me than I can explain.
-        </p>
-
-        <p class="line">
-            You absolutely did not have to do it.
-            But you did.
-        </p>
-
-        <p>
-            And I hope you know how much I
-            appreciate that.
-        </p>
-
-        <button onclick="nextPage(5)">
-            BUT WAIT.
-        </button>
-
-    </div>
-
+<button onclick="nextPage(5)">BUT WAIT.</button>
 </div>
-
+</div>
 </section>
-
 
 <!-- PAGE 5 -->
-
 <section class="page" id="page5">
-
 <div class="content">
+<div class="heart">🚨</div>
 
-    <div class="heart">🚨</div>
+<h2>EVIDENCE OF YOUR CRIMES</h2>
 
-    <h2>
-        EVIDENCE OF YOUR CRIMES
-    </h2>
+<p class="evidence">
+Case file: KANZey vs. Dass<br>
+Defendant: suspiciously innocent-looking best friend
+</p>
 
-    <p class="evidence">
-        Case file: KANZey vs. Dass<br>
-        Defendant: suspiciously innocent-looking best friend
-    </p>
+<div class="card">
+<p class="big">YOU HAVE BEEN COLLECTING SCREENSHOTS OF ME FOR WEEKS.</p>
 
-    <div class="card">
+<p class="line">WITHOUT MY KNOWLEDGE.</p>
 
-        <p class="big">
-            YOU HAVE BEEN COLLECTING SCREENSHOTS OF ME FOR WEEKS.
-        </p>
+<p>
+From our video calls.<br>
+From random moments.<br>
+From moments where I apparently looked absolutely FOUL.
+</p>
 
-        <p class="line">
-            WITHOUT MY KNOWLEDGE.
-        </p>
+<p class="highlight">
+And then you turned all of them into stickers. 😭
+</p>
 
-        <p>
-            From our video calls.
-            From random moments.
-            From moments where I apparently
-            looked absolutely FOUL.
-        </p>
+<p>
+Dass I hate you so bad.<br>
+Why do I look like THAT????
+</p>
 
-        <p class="highlight">
-            And then you turned all of them into stickers. 😭
-        </p>
-
-        <p>
-            Dass I hate you so bad.
-            Why do I look like THAT????
-        </p>
-
-        <button onclick="nextPage(6)">
-            tap to reveal the damage 💀
-        </button>
-
-    </div>
-
+<button onclick="nextPage(6)">tap to reveal the damage 💀</button>
 </div>
-
+</div>
 </section>
 
-
-<!-- PAGE 6 : STICKERS -->
-
+<!-- PAGE 6 -->
 <section class="page" id="page6">
-
 <div class="content">
 
-    <div class="heart">💀</div>
+<div class="heart">💀</div>
 
-    <h2>
-        THE DAMAGE.
-    </h2>
+<h2>THE DAMAGE.</h2>
 
-    <p>
-        Exhibit A through whatever number
-        this crime has reached.
-    </p>
+<p>Exhibit A through whatever number this crime has reached.</p>
 
+<div class="sticker-grid">
 
-    <div class="sticker-grid">
+<div class="sticker">
+<img src="images/01b3c868-e2cf-4065-b10c-92e86dfd4b95.webp" alt="My sticker">
+</div>
 
+<div class="sticker">
+<img src="images/81826118-76fb-4c14-8f28-a5494919c9b4.webp" alt="My sticker">
+</div>
 
-        <div class="sticker">
-            <img src="images/sticker1.png" alt="My sticker">
-        </div>
+<div class="sticker">
+<img src="images/871d684d-271a-4670-940f-2f89d652d4ff.webp" alt="My sticker">
+</div>
 
-
-        <div class="sticker">
-            <img src="images/sticker2.png" alt="My sticker">
-        </div>
-
-
-        <div class="sticker">
-            <img src="images/sticker3.png" alt="My sticker">
-        </div>
-
-
-        <div class="sticker">
-            <img src="images/sticker4.png" alt="My sticker">
-        </div>
-
-
-        <div class="sticker">
-            <img src="images/sticker5.png" alt="My sticker">
-        </div>
-
-
-        <div class="sticker">
-            <img src="images/sticker6.png" alt="My sticker">
-        </div>
-
-
-    </div>
-
-
-    <div class="card">
-
-        <p class="big">
-            DASS.
-        </p>
-
-        <p class="line">
-            I LOOK SO BAD IN HALF OF THESE 😭😭
-        </p>
-
-        <p>
-            You've literally been sitting there for weeks
-            collecting evidence of every questionable
-            facial expression I've ever made.
-        </p>
-
-        <p class="highlight">
-            I hate you.
-        </p>
-
-        <p>
-            ...but also I love you so fucking much
-            for this.
-        </p>
-
-        <button onclick="nextPage(7)">
-            unfortunately continue 🧎🏻‍♀️
-        </button>
-
-    </div>
+<div class="sticker">
+<img src="images/bad67076-3a60-4697-b33e-b1c2c72dccf0.webp" alt="My sticker">
+</div>
 
 </div>
 
+<div class="card">
+
+<p class="big">DASS.</p>
+
+<p class="line">
+I LOOK SO BAD IN HALF OF THESE 😭😭
+</p>
+
+<p>
+You've literally been sitting there for weeks collecting evidence
+of every questionable facial expression I've ever made.
+</p>
+
+<p class="highlight">I hate you.</p>
+
+<p>
+...but also I love you so fucking much for this.
+</p>
+
+<button onclick="nextPage(7)">unfortunately continue 🧎🏻‍♀️</button>
+
+</div>
+</div>
 </section>
 
-
-<!-- PAGE 7 : MEMORIES -->
-
+<!-- PAGE 7 -->
 <section class="page" id="page7">
-
 <div class="content">
 
-    <div class="heart">📸</div>
+<div class="heart">📸</div>
 
-    <h2>
-        Little pieces of us.
-    </h2>
+<h2>Little pieces of us.</h2>
 
-    <p>
-        Because apparently we needed
-        photographic evidence that we're insane.
-    </p>
+<p>
+Because apparently we needed photographic evidence that we're insane.
+</p>
 
+<div class="photo-grid">
 
-    <div class="photo-grid">
+<div class="photo">
+<img src="images/WhatsApp%20Image%202026-09-12%20at%203.00.03%20AM.jpeg" alt="Us">
+<div class="polaroid-text">us being us</div>
+</div>
 
+<div class="photo">
+<img src="images/WhatsApp%20Image%202026-09-12%20at%203.09.15%20AM.jpeg" alt="Us">
+<div class="polaroid-text">questionable behaviour</div>
+</div>
 
-        <div class="photo">
+<div class="photo">
+<img src="images/WhatsApp%20Image%202026-09-12%20at%203.12.40%20AM.jpeg" alt="Us">
+<div class="polaroid-text">another crime scene</div>
+</div>
 
-            <img src="images/photo1.jpg" alt="Us">
+<div class="photo">
+<img src="images/WhatsApp%20Image%202026-09-12%20at%203.13.31%20AM.jpeg" alt="Us">
+<div class="polaroid-text">wouldn't trade it</div>
+</div>
 
-            <div class="polaroid-text">
-                us being us
-            </div>
+<div class="photo">
+<img src="images/WhatsApp%20Image%202026-09-12%20at%203.14.34%20AM.jpeg" alt="Us">
+<div class="polaroid-text">still us</div>
+</div>
 
-        </div>
-
-
-        <div class="photo">
-
-            <img src="images/photo2.jpg" alt="Us">
-
-            <div class="polaroid-text">
-                questionable behaviour
-            </div>
-
-        </div>
-
-
-        <div class="photo">
-
-            <img src="images/photo3.jpg" alt="Us">
-
-            <div class="polaroid-text">
-                another crime scene
-            </div>
-
-        </div>
-
-
-        <div class="photo">
-
-            <img src="images/photo4.jpg" alt="Us">
-
-            <div class="polaroid-text">
-                wouldn't trade it
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <button onclick="nextPage(8)">
-        one last thing 🥹
-    </button>
+<div class="photo">
+<img src="images/WhatsApp%20Image%202026-09-12%20at%203.16.08%20AM.jpeg" alt="Us">
+<div class="polaroid-text">my favourite idiot</div>
+</div>
 
 </div>
 
+<button onclick="nextPage(8)">one last thing 🥹</button>
+
+</div>
 </section>
 
-
-<!-- PAGE 8 : FINAL -->
-
+<!-- PAGE 8 -->
 <section class="page" id="page8">
-
 <div class="content">
 
-    <div class="heart">🫶🏻</div>
+<div class="heart">🫶🏻</div>
 
-    <h2>
-        Okay.
-    </h2>
+<h2>Okay.</h2>
 
-    <div class="card final">
+<div class="card final">
 
-        <p>
-            That's enough feelings for one website.
-        </p>
+<p>That's enough feelings for one website.</p>
 
-        <p class="line">
-            I love you, idiot.
-        </p>
+<p class="line">I love you, idiot.</p>
 
-        <p>
-            Thank you for this.<br>
-            Thank you for everything.<br>
-            Thank you for being my best friend.
-        </p>
+<p>
+Thank you for this.<br>
+Thank you for everything.<br>
+Thank you for being my best friend.
+</p>
 
-        <p class="highlight">
-            Now go admire the resume you made me. 😭
-        </p>
+<p class="highlight">
+Now go admire the resume you made me. 😭
+</p>
 
+<div class="signature">
+lovingly,<br>
+kanzey 🫶🏻<br><br>
 
-        <div class="signature">
+with a heart full of gratitude<br>
+and absolutely no idea how to repay you<br><br>
 
-            lovingly,<br>
-            kanzey 🫶🏻<br><br>
+your eternally indebted bestfriend<br><br>
 
-            with a heart full of gratitude<br>
-            and absolutely no idea how to repay you<br><br>
-
-            your eternally indebted bestfriend<br>
-            <br>
-
-            🧎🏻‍♀️ 🪦
-
-        </div>
-
-
-        <button onclick="celebrate()">
-            okay fine, one last tap 🎀
-        </button>
-
-
-    </div>
-
+🧎🏻‍♀️ 🪦
 </div>
 
-</section>
+<button onclick="celebrate()">okay fine, one last tap 🎀</button>
 
+</div>
+</div>
+</section>
 
 <script>
 
+function nextPage(number){
 
-function nextPage(number) {
+document.querySelectorAll('.page').forEach(page=>{
+page.classList.remove('active');
+});
 
-    document.querySelectorAll('.page').forEach(page => {
+document.getElementById('page'+number).classList.add('active');
 
-        page.classList.remove('active');
-
-    });
-
-
-    document.getElementById('page' + number).classList.add('active');
-
-
-    window.scrollTo({
-
-        top: 0,
-        behavior: 'smooth'
-
-    });
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
 
 }
 
+function celebrate(){
 
+for(let i=0;i<100;i++){
 
-function celebrate() {
+const confetti=document.createElement('div');
 
-    for(let i = 0; i < 100; i++) {
+confetti.classList.add('confetti');
 
+confetti.innerHTML=
+['🎀','💗','✨','🌷','🫶🏻','💌']
+[Math.floor(Math.random()*6)];
 
-        const confetti = document.createElement('div');
+confetti.style.left=Math.random()*100+'vw';
 
+confetti.style.animationDuration=
+(2+Math.random()*3)+'s';
 
-        confetti.classList.add('confetti');
+confetti.style.fontSize=
+(10+Math.random()*18)+'px';
 
+document.body.appendChild(confetti);
 
-        confetti.innerHTML =
-            ['🎀','💗','✨','🌷','🫶🏻','💌']
-            [Math.floor(Math.random()*6)];
-
-
-        confetti.style.left =
-            Math.random() * 100 + 'vw';
-
-
-        confetti.style.animationDuration =
-            (2 + Math.random() * 3) + 's';
-
-
-        confetti.style.fontSize =
-            (10 + Math.random() * 18) + 'px';
-
-
-        document.body.appendChild(confetti);
-
-
-        setTimeout(() => {
-
-            confetti.remove();
-
-        }, 5000);
-
-    }
+setTimeout(()=>{
+confetti.remove();
+},5000);
 
 }
 
+}
 
 </script>
 
